@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/24 03:17:18 by root             ###   ########.fr       */
+/*   Updated: 2024/02/29 18:19:31 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -51,7 +51,7 @@ int	ft_put_print_hex(unsigned int nbr, const char format)
 {
 	if (nbr == 0)
 	{
-		ft_putchar('0');
+			write(1, "0", 1);
 		return (1);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/24 02:27:06 by root             ###   ########.fr       */
+/*   Updated: 2024/02/29 19:08:47 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -48,10 +48,16 @@ int	ft_putptr(unsigned long long ptr)
 
 	counter = 0;
 	if (ptr == 0)
-		counter += write(1, "(nil)", 5);
+	{
+		if (write(1, "0x0", 3) != 3)
+			return -1;
+		counter = counter +3;
+	}
 	else
 	{
-		counter += write(1, "0x", 2);
+		if (write(1, "0x", 2) != 2)
+			return -1;
+		counter = counter +2;
 		ft_putp(ptr);
 		counter += ft_putlen(ptr);
 	}
