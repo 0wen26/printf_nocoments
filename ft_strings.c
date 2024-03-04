@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/29 19:04:50 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:26:23 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -26,7 +26,7 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 	{
 		if (write(1, ("(null)"), 6) != 6)
-			return -1;
+			return (-1);
 		return (6);
 	}
 	while (str[counter])

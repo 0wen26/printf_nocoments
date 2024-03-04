@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:14:53 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/29 18:21:41 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:12:27 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ char	*ft_unitoa(unsigned int n)
 	len = ft_len(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
+	{
+		free(str);
 		return (0);
+	}
 	str[len] = '\0';
 	while (n != 0)
 	{

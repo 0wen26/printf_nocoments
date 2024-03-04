@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:14:53 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/23 03:29:17 by root             ###   ########.fr       */
+/*   Updated: 2024/03/04 11:55:25 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ char	*ft_itoa(int n)
 
 	len = ft_len(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	if (!str)
+	{
 		return (NULL);
+	}
 	str[len] = '\0';
 	if (n == 0)
 		str[0] = '0';

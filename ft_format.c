@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/29 19:02:41 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:36:08 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -17,18 +17,18 @@ int	ft_format(va_list arguments, char format)
 
 	counter = 0;
 	if (format == 'c')
-		return ft_putchar(va_arg(arguments, int));
+		return (ft_putchar(va_arg(arguments, int)));
 	else if (format == 's')
-		return ft_putstr(va_arg(arguments, char *));
+		return (ft_putstr(va_arg(arguments, char *)));
 	else if (format == 'p')
-		return ft_putptr(va_arg(arguments, unsigned long long));
+		return (ft_putptr(va_arg(arguments, unsigned long long)));
 	else if (format == 'd' || format == 'i')
-		return ft_putnbr(va_arg(arguments, int));
+		return (ft_putnbr(va_arg(arguments, int)));
 	else if (format == 'u')
-		return ft_put_unsigned(va_arg(arguments, unsigned int));
+		return (ft_put_unsigned(va_arg(arguments, unsigned int)));
 	else if (format == 'x' || format == 'X' )
-		return ft_put_print_hex(va_arg(arguments, unsigned int), format);
+		return (ft_put_print_hex(va_arg(arguments, unsigned int), format));
 	else if (format == '%')
-		return ft_putchar(format);
+		return (ft_putchar(format));
 	return (0);
 }

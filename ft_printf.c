@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/29 19:01:24 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 11:18:24 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -31,7 +31,7 @@ int	ft_printf(char const *str, ...)
 		{
 			size += ft_format(arguments, str[i + 1]);
 			if (size == -1)
-				return -1;
+				return (-1);
 			i++;
 		}
 		else
