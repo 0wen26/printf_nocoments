@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:14:53 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/04 11:55:25 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 16:19:51 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ char	*ft_itoa(int n)
 	unsigned int	len;
 
 	len = ft_len(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc((sizeof(char) * len + 1));
 	if (!str)
-	{
 		return (NULL);
-	}
 	str[len] = '\0';
 	if (n == 0)
 		str[0] = '0';
@@ -57,9 +55,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	}
 	else
-	{
 		number = (unsigned int)n;
-	}
 	ft_string(str, len -1, number);
 	return (str);
 }

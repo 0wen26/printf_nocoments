@@ -6,15 +6,11 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/04 11:18:24 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:07:35 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
 #include "libft.h"
 #include "ft_printf.h"
-#include <limits.h>
 
 int	ft_printf(char const *str, ...)
 {
@@ -33,6 +29,8 @@ int	ft_printf(char const *str, ...)
 			if (size == -1)
 				return (-1);
 			i++;
+			if (str[i] == '\0')
+				return (size);
 		}
 		else
 		{
@@ -45,10 +43,25 @@ int	ft_printf(char const *str, ...)
 	va_end(arguments);
 	return (size);
 }
-/*
-int main()
+
+/*int main()
 {
 	// Tests básicos
+    int ft_size, printf_size;
+
+    // Prints ordenados y comparación de resultados
+    ft_size = ft_printf("dgs%dxx\n", 10);
+    printf_size = printf("dgs%dxx\n", 10);
+    printf("ft_printf size: %d, printf size: %d\n", ft_size, printf_size);
+
+	ft_size = ft_printf("16 %x \n", -2000);
+    printf_size = printf("16 %x \n", -2000);
+    printf("ft_printf size: %d, printf size: %d\n", ft_size, printf_size);
+
+	printf("\nORIGINAL: %d", printf("Hola%\0Adios\n"));
+	printf("\n--------------------------------\n");
+	printf("\nFT: %d", ft_printf("Hola%\0Adios\n"));
+		// Tests básicos
     int ft_size, printf_size;
 
     // Prints ordenados y comparación de resultados
@@ -204,13 +217,8 @@ int main()
     ft_size = ft_printf("15. %c %s %p\n", 'H', "Pointer", &ft_size);
     printf_size = printf("15. %c %s %p\n", 'H', "Pointer", &ft_size);
     printf("ft_printf size: %d, printf size: %d\n", ft_size, printf_size);
-    
+
     ft_size = ft_printf("16 %%%%%hola que tal \n");
     printf_size = printf("16 %%%%% \n");
     printf("ft_printf size: %d, printf size: %d\n", ft_size, printf_size);
-
-	return 0;
-
-
-}
-*/
+}*/

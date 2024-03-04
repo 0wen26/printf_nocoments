@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/04 11:36:08 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:27:28 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -25,7 +25,7 @@ int	ft_format(va_list arguments, char format)
 	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(arguments, int)));
 	else if (format == 'u')
-		return (ft_put_unsigned(va_arg(arguments, unsigned int)));
+		return (ft_putnbrunsig(va_arg(arguments, unsigned int)));
 	else if (format == 'x' || format == 'X' )
 		return (ft_put_print_hex(va_arg(arguments, unsigned int), format));
 	else if (format == '%')

@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/24 02:59:18 by root             ###   ########.fr       */
+/*   Updated: 2024/03/04 14:31:47 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <limits.h>
+
 /*
  * Funcion principal
  */
@@ -29,7 +31,7 @@ int		ft_putstr(char *str);
  * Funciones int
  */
 int		ft_putnbr(int nbr);
-int		ft_put_unsigned(unsigned int nbr);
+int		ft_putnbrunsig(unsigned int nbr);
 char	*ft_itoa(int nbr);
 char	*ft_unitoa(unsigned int nbr);
 /*

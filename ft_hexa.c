@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/04 11:31:09 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:08:21 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -16,6 +16,8 @@ static int	ft_put_len(unsigned int nbr)
 	int	counter;
 
 	counter = 0;
+	if (nbr < 0)
+		return (-1);
 	while (nbr != 0)
 	{
 		counter++;
