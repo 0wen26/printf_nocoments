@@ -6,23 +6,16 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/06 14:48:58 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:07:06 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-
-int	ft_printf(char const *str, ...)
+int	ft_aux(int i, int size, char const *str, va_list arguments)
 {
-	int		i;
-	int		size;
-	va_list	arguments;
-	int		j;
+	int	j;
 
-	i = 0;
 	j = 0;
-	size = 0;
-	va_start(arguments, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -39,10 +32,33 @@ int	ft_printf(char const *str, ...)
 		{
 			if (ft_putchar(str[i]) == -1)
 				return (-1);
-			size ++;
+			size++;
 		}
 		i++;
 	}
+	return (size);
+}
+
+int	ft_printf(char const *str, ...)
+{
+	int		i;
+	int		size;
+	va_list	arguments;
+
+	size = 0;
+	i = 0;
+	va_start(arguments, str);
+	size =ft_aux(i, size, str, arguments);
+	if (size == -1)
+		return (-1);
 	va_end(arguments);
 	return (size);
 }
+/*
+int main ()
+{
+	ft_printf("%c",'0');
+
+	return 0;
+}
+*/
