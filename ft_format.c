@@ -6,16 +6,13 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/06 12:22:42 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:47:06 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
 int	ft_format(va_list arguments, char format)
 {
-	int	counter;
-
-	counter = 0;
 	if (format == 'c')
 		return (ft_putchar(va_arg(arguments, int)));
 	else if (format == 's')
