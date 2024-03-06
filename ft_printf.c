@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/06 16:07:06 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:36:20 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -48,17 +48,9 @@ int	ft_printf(char const *str, ...)
 	size = 0;
 	i = 0;
 	va_start(arguments, str);
-	size =ft_aux(i, size, str, arguments);
+	size = ft_aux(i, size, str, arguments);
 	if (size == -1)
 		return (-1);
 	va_end(arguments);
 	return (size);
 }
-/*
-int main ()
-{
-	ft_printf("%c",'0');
-
-	return 0;
-}
-*/
