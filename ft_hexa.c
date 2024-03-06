@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/03/04 14:08:21 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:19:57 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -30,8 +30,10 @@ static int	ft_put_hex(unsigned int nbr, const char format)
 {
 	if (nbr >= 16)
 	{
-		ft_put_hex(nbr / 16, format);
-		ft_put_hex(nbr % 16, format);
+		if (ft_put_hex(nbr / 16, format) == -1)
+			return (-1);
+		if (ft_put_hex(nbr % 16, format) == -1)
+			return (-1);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: rherraiz <rherraiz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:12:52 by rherraiz          #+#    #+#             */
-/*   Updated: 2024/02/29 19:08:47 by rherraiz         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:16:32 by rherraiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -24,7 +24,7 @@ int	ft_putlen(unsigned long long ptr)
 	return (counter);
 }
 
-void	ft_putp(unsigned long long ptr)
+int	ft_putp(unsigned long long ptr)
 {
 	if (ptr >= 16)
 	{
@@ -35,11 +35,14 @@ void	ft_putp(unsigned long long ptr)
 	{
 		if (ptr <= 9)
 		{
-			ft_putchar(ptr + '0');
+			if (ft_putchar(ptr + '0') != 1)
+				return (-1);
 		}
 		else
-			ft_putchar(ptr -10 + 'a');
+			if (ft_putchar(ptr -10 + 'a') != 1)
+				return (-1);
 	}
+	return (0);
 }
 
 int	ft_putptr(unsigned long long ptr)
@@ -50,15 +53,16 @@ int	ft_putptr(unsigned long long ptr)
 	if (ptr == 0)
 	{
 		if (write(1, "0x0", 3) != 3)
-			return -1;
+			return (-1);
 		counter = counter +3;
 	}
 	else
 	{
 		if (write(1, "0x", 2) != 2)
-			return -1;
+			return (-1);
 		counter = counter +2;
-		ft_putp(ptr);
+		if (ft_putp(ptr) != 0)
+			return (-1);
 		counter += ft_putlen(ptr);
 	}
 	return (counter);
