@@ -3,7 +3,7 @@ RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
 NAME = libftprintf.a
-HEADER = libftprintf.h
+HEADER = ft_printf.h
 
 SRCS = ft_printf.c ft_itoa.c ft_unitoa.c\
 	   ft_strings.c ft_ints.c ft_format.c\
